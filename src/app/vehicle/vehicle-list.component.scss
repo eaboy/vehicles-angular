@@ -1,18 +1,46 @@
-section {
+.vehicle-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}
-app-vehicle-card {
-  display: block;
-  border-bottom: 1px solid lightgrey;
-  width: 100%;
-  @media (min-width: 768px) {
-    width: calc(50% - 1px);
-    border-bottom: none;
-    border-right: 1px solid lightgrey;
+  app-vehicle-card {
+    display: block;
+    border-bottom: 1px solid lightgrey;
+    width: 100%;
+    opacity: 0;
+    animation: fadeIn 250ms forwards;
+    @media (min-width: 768px) {
+      width: calc(50% - 1px);
+      border-bottom: none;
+      border-right: 1px solid lightgrey;
+      animation-name: fadeInDesktop;
+    }
+    @media (min-width: 1024px) {
+      width: calc(25% - 1px);
+    }
   }
-  @media (min-width: 1024px) {
-    width: calc(25% - 1px);
+  &__loading {
+    margin-top: 30px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDesktop {
+  from {
+    opacity: 0;
+    transform: translateY(-30%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

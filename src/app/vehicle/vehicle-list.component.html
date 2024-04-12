@@ -1,5 +1,9 @@
-<section>
-  @for (vehicle of vehicleList | async; track $index) {
-  <app-vehicle-card [vehicle]="vehicle"></app-vehicle-card>
+<section class="vehicle-list">
+  @if (vehicleList | async; as vehicles) {
+  @for (vehicle of vehicles; track vehicle.id; let i = $index) {
+  <app-vehicle-card [vehicle]="vehicle" [style.animationDelay.ms]="100 * i"></app-vehicle-card>
+  }
+  } @else {
+  <h4 class="vehicle-list__loading">Loading vehicles...</h4>
   }
 </section>
