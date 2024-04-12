@@ -1,1 +1,5 @@
-<p>vehicles works!</p>
+<section>
+  @for (vehicle of vehicleList | async; track $index) {
+  <app-vehicle-card [vehicle]="vehicle"></app-vehicle-card>
+  }
+</section>

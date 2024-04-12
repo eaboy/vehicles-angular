@@ -1,0 +1,13 @@
+<article class="vehicle-card">
+  <picture>
+    <source media="(min-width: 768px)" [srcset]="desktopImgSrc">
+    <img [src]="mobileImgSrc" [attr.alt]="vehicle.name">
+  </picture>
+  <div>
+    <h4>{{ vehicle.name }}</h4>
+    @if (vehicle.price) {
+    <p>From {{ vehicle.price }}</p>
+    }
+    <p>{{ vehicle.description }}</p>
+  </div>
+</article>
