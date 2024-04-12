@@ -9,6 +9,7 @@
     display: block;
     width: 25vw;
     height: 25vw;
+    aspect-ratio: 1 / 1;
   }
   &__info {
     padding: 5px 10px;
@@ -35,6 +36,7 @@
     img {
       width: 100%;
       height: auto;
+      aspect-ratio: 16 / 9;
     }
     &__name {
       margin-top: 10px;
