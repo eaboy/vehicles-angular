@@ -1,21 +1,20 @@
 import { Component } from '@angular/core';
-import { VehiclesService } from './vehicles.service';
+import { VehicleService } from './vehicle.service';
 import { CommonModule } from '@angular/common';
 import { VehicleCardComponent } from './vehicle-card/vehicle-card.component';
 
 @Component({
-  selector: 'app-vehicles',
+  selector: 'app-vehicle-list',
   standalone: true,
   imports: [CommonModule, VehicleCardComponent],
-  providers: [VehiclesService],
-  templateUrl: './vehicles.component.html',
-  styleUrl: './vehicles.component.scss'
+  providers: [VehicleService],
+  templateUrl: './vehicle-list.component.html',
+  styleUrl: './vehicle-list.component.scss'
 })
-export class VehiclesComponent {
+export class VehicleListComponent {
 
   vehicleList = this.vehiclesService.get();
 
-  constructor(private vehiclesService: VehiclesService) { }
-
+  constructor(private vehiclesService: VehicleService) { }
 
 }

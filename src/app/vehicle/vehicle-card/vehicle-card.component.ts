@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { Vehicle } from '../vehicles.model';
+import { Vehicle } from '../vehicle.model';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -20,6 +20,10 @@ export class VehicleCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.setImgSrcs();
+  }
+
+  private setImgSrcs() {
     const { media } = this.vehicle;
     this.mobileImgSrc = `assets${media.find(img => img.url.includes('1x1'))?.url}` || '';
     this.desktopImgSrc = `assets${media.find(img => img.url.includes('16x9'))?.url}` || '';

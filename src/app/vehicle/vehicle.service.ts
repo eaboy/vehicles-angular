@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { ApiVehicle, Vehicle, VehicleDetails } from './vehicles.model';
+import { ApiVehicle, Vehicle, VehicleDetails } from './vehicle.model';
 import { apiBaseUrl } from '../shared/api';
 import { HttpClient } from '@angular/common/http';
 import { catchError, forkJoin, map, of, switchMap } from 'rxjs';
 
 @Injectable()
-export class VehiclesService {
+export class VehicleService {
 
   private vehicleListUrl = `${apiBaseUrl}/api/vehicles/`;
 
