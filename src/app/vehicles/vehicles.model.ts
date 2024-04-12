@@ -1,4 +1,13 @@
-export interface Vehicle {
+export interface Vehicle extends ApiVehicle {
+  description: string;
+  price: string;
+  passengers: number;
+  drivetrain: string[];
+  bodystyles: string[];
+  emissions: Emissions;
+}
+
+export interface ApiVehicle {
   id: string;
   name: string;
   modelYear: string;
