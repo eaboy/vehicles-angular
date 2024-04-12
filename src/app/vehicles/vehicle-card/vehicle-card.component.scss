@@ -1,0 +1,64 @@
+.vehicle-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  picture {
+    flex-shrink: 0;
+  }
+  img {
+    display: block;
+    width: 25vw;
+    height: 25vw;
+  }
+  &__info {
+    padding: 5px 10px;
+    flex-grow: 1;
+  }
+  &__name {
+    font-size: medium;
+  }
+  &__price {
+    margin-top: 5px;
+    font-weight: 500;
+    font-size: small;
+  }
+  &__description {
+    margin-top: 10px;
+    font-size: x-small;
+  }
+  @media (min-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    picture {
+      width: 100%;
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+    &__name {
+      margin-top: 10px;
+      padding: 2px 0;
+      border: {
+        top: 1px solid black;
+        bottom: 1px solid black;
+      }
+    }
+    &__price {
+      margin-top: 15px;
+    }
+    &__info {
+      padding: 15px 25px 5px;
+      display: flex;
+      width: calc(100% - 50px);
+      flex-direction: column;
+      align-items: center;
+    }
+    &__description {
+      font-size: small;
+    }
+    &__name + &__description {
+      margin-top: 40px;
+    }
+  }
+}

@@ -3,11 +3,11 @@
     <source media="(min-width: 768px)" [srcset]="desktopImgSrc">
     <img [src]="mobileImgSrc" [attr.alt]="vehicle.name">
   </picture>
-  <div>
-    <h4>{{ vehicle.name }}</h4>
+  <div class="vehicle-card__info">
+    <h4 class="vehicle-card__name">{{ vehicle.name }}</h4>
     @if (vehicle.price) {
-    <p>From {{ vehicle.price }}</p>
+    <p class="vehicle-card__price">From {{ vehicle.price }}</p>
     }
-    <p>{{ vehicle.description }}</p>
+    <p class="vehicle-card__description">{{ vehicle.description }}</p>
   </div>
 </article>
