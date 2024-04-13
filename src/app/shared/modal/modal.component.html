@@ -1,5 +1,7 @@
 <div class="modal" (click)="close()">
-  <div class="modal-container" (click)="$event.stopPropagation()">
+  <div class="modal-container" [class]="{'modal-closing': closingModal}" (click)="$event.stopPropagation()"
+    role="dialog" aria-modal="true" [attr.aria-label]="modalLabel">
     <ng-content></ng-content>
+    <button type="button" (click)="close()">Close</button>
   </div>
 </div>

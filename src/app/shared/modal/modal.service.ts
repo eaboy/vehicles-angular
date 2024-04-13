@@ -17,10 +17,14 @@ export class ModalService {
     private appRef: ApplicationRef
   ) { }
 
-  open(component: Type<unknown>) {
+  open(component: Type<unknown>, options: ModalOptions) {
     const componentToRender = createComponent(component, { environmentInjector: this.injector });
     this.modalComponent = createComponent(ModalComponent, { environmentInjector: this.injector, projectableNodes: [[componentToRender.location.nativeElement]] });
     this.renderer.appendChild(this.document.body, this.modalComponent.location.nativeElement);
+    this.modalComponent.setInput('modalLabel', options.modalLabel)
+    if (options?.inputs) {
+      Object.keys(options.inputs).forEach(key => componentToRender.setInput(key, options?.inputs?.[key]));
+    }
     this.appRef.attachView(componentToRender.hostView);
     this.appRef.attachView(this.modalComponent.hostView);
     return {
@@ -28,4 +32,9 @@ export class ModalService {
     }
   }
 
+}
+
+export interface ModalOptions {
+  modalLabel: string;
+  inputs?: Record<string, any>;
 }

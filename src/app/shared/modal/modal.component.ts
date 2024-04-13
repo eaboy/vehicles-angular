@@ -1,4 +1,4 @@
-import { Component, ElementRef } from '@angular/core';
+import { Component, ElementRef, Input } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -8,10 +8,19 @@ import { Component, ElementRef } from '@angular/core';
 })
 export class ModalComponent {
 
+  closingModal = false;
+  private closingModalAnimationDuration = 250;
+
+  @Input() modalLabel: string = '';
+
   constructor(private element: ElementRef) { }
 
   close() {
-    this.element.nativeElement.remove();
+    this.closingModal = true;
+    setTimeout(() => {
+      this.element.nativeElement.remove();
+      this.closingModal = false;
+    }, this.closingModalAnimationDuration);
   }
 
 }
