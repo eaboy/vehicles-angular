@@ -9,5 +9,8 @@
     <p class="vehicle-card__price">From {{ vehicle.price }}</p>
     }
     <p class="vehicle-card__description">{{ vehicle.description }}</p>
+    <div class="vehicle-card__cta">
+      <button type="button" (click)="openDetails()">More details</button>
+    </div>
   </div>
 </article>
