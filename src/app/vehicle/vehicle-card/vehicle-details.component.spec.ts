@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { VehicleDetailsComponent } from './vehicle-details.component';
+import { vehicleMock } from '../../../test/mocks/vehicle';
 
 describe('VehicleDetailsComponent', () => {
   let component: VehicleDetailsComponent;
@@ -14,6 +15,7 @@ describe('VehicleDetailsComponent', () => {
 
     fixture = TestBed.createComponent(VehicleDetailsComponent);
     component = fixture.componentInstance;
+    component.vehicle = vehicleMock;
     fixture.detectChanges();
   });
 
