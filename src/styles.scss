@@ -18,5 +18,24 @@ body {
 }
 
 p {
-  color: grey;
+  color: #606060;
+}
+
+button {
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 2px;
+  padding: 10px 20px;
+  border: 0;
+  color: #3a4149;
+  background: #e7ebee;
+  font-size: 15px;
+  &:hover {
+    transition: all 0.1s ease;
+    box-shadow:
+      0 0 0 0 #fff,
+      0 0 0 2px #3a4149;
+  }
 }
